@@ -3,11 +3,13 @@
 # Пустая строка для вывода текста
 echo ""
 
+localHome="$HOME"
+
 # Получаем список установленных Flatpak приложений
 apps=$(flatpak list --app --columns=application)
 
 # Перебираем папки в директории /home/platon/.var/app
-for folder in /home/plafon/.var/app/*/
+for folder in $localHOME/.var/app/*/
 do
 # Получаем имя папки из пути
 folder_name=$(basename $folder)
